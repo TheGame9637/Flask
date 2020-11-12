@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Start your project here-->
+
+<div class="container mt-3">
+    <hr>
+    <div class="header">
+        <h1 class="text-center">Add New Student</h1>
+        <h6>{{ error }}</h6>
+    </div>
+    <hr>
+    <!-- Material form grid -->
+    <form action="/data" method="post">
+        <!-- Grid row -->
+        <div class="row">
+            <!-- Grid column -->
+            <div class="col">
+                <!-- Material input -->
+                <div class="md-form mt-0">
+                    <input type="text" name="NameOfStudent" class="form-control" placeholder="Name of Student">
+                </div>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col">
+                <!-- Material input -->
+                <div class="md-form mt-0">
+                    <input type="number" name="RollOfStudent" class="form-control" placeholder="Roll No">
+                </div>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col">
+                <!-- Material input -->
+                <div class="md-form mt-0">
+                    <input type="text" name="GrOfStudent" class="form-control" placeholder="Divsion">
+                </div>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col">
+                <!-- Material input -->
+                <div class="md-form mt-0">
+                    <button type="submit" class="btn btn-success btn-sm">Add</button>
+                </div>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </form>
+    <!-- Material form grid -->
+    <hr>
+    <div class="header">
+        <h1 class="text-center">Student Data</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr class="font-weight-bold indigo-text">
+                    <th scope="col">Name</th>
+                    <th scope="col">Division</th>
+                    <th scope="col">Roll no</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in data %}
+                <!-- This is start of for loop -->
+                <tr>
+                    <td>{{ student[1] }}</td>
+                    <td>{{ student[2] }}</td>
+                    <td>{{ student[3] }}</td>
+                </tr>
+                {% endfor %}
+                <!-- end for -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- End your project here-->
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container mt-3">
+    <!-- Default form login -->
+<form class="text-center border border-light p-5" action="/senti" method="post">
+
+    <p class="h4 mb-4">Enter a comment</p>
+    <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Enter a comment." name="comment">
+    <button class="btn btn-info btn-block my-4" type="submit">Analyse</button>
+
+</form>
+<!-- Default form login -->
+<h1 class="text-center mt-3">The comment is - <strong class="indigo-text">{{ response }}</strong></h1>
+<h6 class="text-center"> {{ comment }} </h6>
+</div>
+{% endblock %}
